@@ -3,4 +3,5 @@ class Sources:
   Sources class to define Sources Objects
   '''
   
-  Def __
+  def __init__(self,id,name,description,url,category,country,language):
+    
