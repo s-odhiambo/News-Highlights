@@ -1,2 +1,6 @@
 class Config:
-pass  
+pass
+
+
+class ProdConfig(Config):
+    
