@@ -3,13 +3,17 @@ from app import app
 
 @app.route('/')
 def index():
+  '''
+  function that returns the index page and its content
+  '''
   
+  message = 'News-Highlights'
   return render_template('index.html',message = message)
 
-@app.route('/news/<news_id>')
-def news(news_id)
+# @app.route('/news/<news_id>')
+# def news(news_id)
 
-return render_template('news.html',id = news_id)
+# return render_template('news.html',id = news_id)
 
 @app.route('/news/<int:news_id>')
 def news(news_id):
