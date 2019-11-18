@@ -29,3 +29,7 @@ def index():
   title = 'Home - WElcome to The best News Review Website Online'
   
   return render_template('index.html', title = title)
+
+
+
+

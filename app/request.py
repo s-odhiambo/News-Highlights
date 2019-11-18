@@ -34,4 +34,27 @@ def process_results(news_list):
   Function that process the movie results and transform them to a list of objects
   
   Args:
-  news_list: A list of dictionaries     
+  news_list: A list of dictionaries that contains news details
+  
+  Return :
+  news_results: A list of news objects
+  '''
+  news_list = []
+  
+  for news_item in news_list:
+    
+    id = news_item.get('id')
+    name = news_item.get('original_name')
+    description = news_item('description')
+    url = news_item('url')
+    category = news_item('category_path')
+    country = news_item('country')
+    language = news_item('language')
+    
+    if category:
+      news_object = News(id,name,description,url,country,language)
+      news_results.append(news_object)
+      
+      return news_results
+    
+         
