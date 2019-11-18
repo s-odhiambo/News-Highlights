@@ -1,5 +1,6 @@
 from flask import render_template
 from app import app
+from .request import get_news
 
 @app.route('/')
 def index():
@@ -29,6 +30,13 @@ def index():
   title = 'Home - WElcome to The best News Review Website Online'
   
   return render_template('index.html', title = title)
+
+@app.route('/')
+def index():
+  
+  '''
+  View root page function that returns the index page and its data
+  '''
 
 
 
