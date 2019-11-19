@@ -13,4 +13,5 @@ h3{
 }
 ul>li{
   font-family: 'Courgette', cursive; 
+  text-decoration: underline;
 }
