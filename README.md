@@ -1,12 +1,12 @@
- ###PARSEWORD APP
+ PARSEWORD APP
 
- ##AUTHOR
+ AUTHOR
   Samuel Odhiambo
 
- ###SCREENSHOT
+ SCREENSHOT
  
  
- ###USER STORY
+ USER STORY
   As a user, I would like to see various news sources on the homepage of the application.
   As a user, I would also want to select a news source and see all news articles from the selected news source in  the application.
   As a user, I would want to see the image, description and the time a news article was created.
@@ -19,8 +19,8 @@
   Technologies used
   Python 3.6 Pip Heroku
  
- ###License
+ License
   MIT License Copyright (c) 2019 s-odhiambo
  
- ###Collaborate
+ Collaborate
   Send me an email to collaborate on the project.
