@@ -4,21 +4,24 @@
 
 {% block content%}
 <div class="container">
-                <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}"
+                
+
+                <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+                <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
 		
-        <h3 style="text-align: center" clas="color"> Top Business News Sources</h3>
+        <h3 style="text-align: center" class="color"> Top Business News Sources</h3>
 
         {{ macro.displaySourceList(sources)}}
         
-        <h3 style="text-align: center" clas="color"> Top Technology News Sources</h3>
+        <h3 style="text-align: center" class="color"> Top Technology News Sources</h3>
 
         {{ macro.displaySourceList(technology_sources)}}
        
-        <h3 style="text-align: center" clas="color"> Top Entertainment News Sources</h3>
+        <h3 style="text-align: center" class="color"> Top Entertainment News Sources</h3>
 
         {{ macro.displaySourceList(entertainment_sources)}}
             
-        <h3 style="text-align: center" clas="color"> Top Sports News Sources</h3>
+        <h3 style="text-align: center" class="color"> Top Sports News Sources</h3>
 
         {{ macro.displaySourceList(sports_sources)}} 
 	
