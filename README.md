@@ -1,4 +1,4 @@
- PARSEWORD APP
+ NEWS-HIGHLIGHTS
 
  AUTHOR
   Samuel Odhiambo
