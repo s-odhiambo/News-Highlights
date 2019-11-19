@@ -1,61 +1,29 @@
-from flask import render_template, request
-
-
-
-from app.requests import Request
+from flask import render_template,request,redirect,url_for
 from . import main
+from ..requests import get_sources,get_articles
+# from .models import Sources
 
-requests = Request()
-
+	#views
 @main.route('/')
 def index():
-  sources = requests.get_sources()
-  if sources:
-    return render_template('index.html', sources=sources)
-  
-  
-  
-  @main.route('/articles', method=["POST","GET"])
-  def articles_page()
-  if request.method == 'POST':
-    search = request.form.get("search")
-  else:
-    articles = request.get_articles("tech")
-  return render_template('article.html', articles=articles)
-  
-  @main.route('/article/<id>')
-  def source_article(id)
-  source = id
-  return render_template('display.html', source_article = source_articles, source = source )
-
-  
-from flask import render_template, request
-
-from app.requests import Request
-from . import main
-
-requests = Request()
+	'''
+	view root page function that returns the index the page and its data
+	'''
+	sources = get_sources('business')
+	sports_sources = get_sources('sports')
+	technology_sources = get_sources('technology')
+	entertainment_sources = get_sources('entertainment')
+	title = "News-Highlights"
+	return render_template('index.html',title = title, sources = sources, sports_sources = sports_sources, technology_sources = technology_sources, entertainment_sources = entertainment_sources)
 
 
-@main.route('/')
-def index():
-    sources = requests.get_sources()
-    if sources:
-        return render_template('index.html', sources=sources)
+@main.route('/sources/<id>')
+def articles(id):
+		
+		'''
+		view articles page
+		'''
+		articles = get_articles(id)
+		title = f'NH | {id}'
 
-
-@main.route('/articles', methods=["POST", "GET"])
-def articles_page():
-    if request.method == 'POST':
-        search = request.form.get("search")
-        articles = requests.get_articles(search)
-    else:
-        articles = requests.get_articles("tech")
-    return render_template('articles.html', articles=articles)
-
-
-@main.route('/article/<id>')
-def source_article(id):
-    source_articles = requests.get_article_by_source(id)
-    source = id
-    return render_template('display.html', source_articles=source_articles, source=source)
+		return render_template('articles.html',title= title,articles = articles)

@@ -1,38 +1,27 @@
-{% import 'macros.html' as macro%}
-<h1>{{message}}</h1><!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the best News Review website </title>
-        {% endif %}
-    </head>
-    <body>
-      <h3>Popular News</h3>
-      <ul>
-        <!-- {% for popular_news in popular %} -->
-        {{ macro.displayNewsList(popular)}}
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+#{ %import'articles.html' as article% }
+
+{% block content%}
+<div class="container">
+                <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}"
+		
+        <h3 style="text-align: center" clas="color"> Top Business News Sources</h3>
+
+        {{ macro.displaySourceList(sources)}}
         
-        <li>{{ popular_news.title}}</li>
-          {% endfor %}
-          </ul>
-          <h3>Upcoming News</h3>
-          <ul>
-            <!-- {% for upcoming_news in upcoming %} -->
-            {{ macro.displayNewsList(upcoming)}}
-            <li>{{ upcoming_news.title}}</li>
-            {% endfor %}
-            </ul>
+        <h3 style="text-align: center" clas="color"> Top Technology News Sources</h3>
 
-            <h3>Now Showing</h3>
-            <ul>
-              <!-- {% for now_showing_news in now_showing %} -->
-              {{ macro.displayNewsList(now_showing)}}
-              <li>{{ now_showing_news.title}}</li>
-              {% endfor %}
-            </ul>
+        {{ macro.displaySourceList(technology_sources)}}
+       
+        <h3 style="text-align: center" clas="color"> Top Entertainment News Sources</h3>
 
-    </body>
-</html>
+        {{ macro.displaySourceList(entertainment_sources)}}
+            
+        <h3 style="text-align: center" clas="color"> Top Sports News Sources</h3>
+
+        {{ macro.displaySourceList(sports_sources)}} 
+	
+</div>
+
+{%endblock%}
